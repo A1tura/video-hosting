@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Upload Video Page</title>
+    <link rel="stylesheet" href="/statics/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="status" class="status">
+            <div id="proccesStatus" class="proccesStatus">
+                <div id="proccesStatus-bar" class="proccesStatus-bar"></div>
+            </div>
+
+            <div id="sendStatus" class="sendStatus">
+                <div id="sendStatus-bar" class="sendStatus-bar"></div>
+            </div>
+        </div>
+        <input id="title-input" type="text" />
+        <input id="file-input" type="file" accept="video/mp4" />
+        <button onClick="video.proccesVideo()">Upload</button>
+    </div>
+</body>
+<script src="/statics/js/upload.js"></script>
+
+</html>

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: db
+    image: postgres:latest
+    build:
+      context: ./db
+    networks:
+      - app-network
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "--host", "localhost", "--port", "5432"]
+      retries: 5
+      interval: 10s
+      start_period: 30s
+      timeout: 5s
+
+  backend:
+      container_name: backend
+      build:
+        context: ./backend
+      ports:
+        - 8081:8081
+      networks:
+        - app-network
+      depends_on:
+        db:
+          condition: service_healthy
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    ports:
+      - 8080:8080
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+      driver: bridge

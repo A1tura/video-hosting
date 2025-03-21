@@ -1,0 +1,10 @@
+#videos {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+#videos > a {
+    font-size: 50px;
+}
