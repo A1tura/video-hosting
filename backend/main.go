@@ -46,5 +46,5 @@ func main() {
 
 	http.Handle("/videos", CORSMiddleware(CtxMiddleware(http.HandlerFunc(controllers.GetVideos))))
 
-	http.ListenAndServe(":8081", nil)
+	http.ListenAndServe("0.0.0.0:8081", nil)
 }
