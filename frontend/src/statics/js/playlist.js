@@ -1,5 +1,5 @@
-const PLAYLISTS_URL = "http://127.0.0.1:8081/video/";
-const SEGMENT_URL = "http://127.0.0.1:8081/segment/";
+const PLAYLISTS_URL = "http://0.0.0.0:8081/video/";
+const SEGMENT_URL = "http://0.0.0.0:8081/segment/";
 
 const videoPlayer = document.getElementById("video");
 const videoIdInput = document.getElementById("videoId");

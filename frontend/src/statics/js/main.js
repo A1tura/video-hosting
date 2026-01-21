@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < data.length; i++) {
             const element = document.createElement("a")
             element.textContent = data[i].title
-            element.href = "http://127.0.0.1:8080/videos/" + data[i].id
+            element.href = "http://0.0.0.0:8080/videos/" + data[i].id
 
             videoElement.appendChild(element)
         }
