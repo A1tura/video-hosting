@@ -24,7 +24,7 @@ jobs:
           overwrite: true
 
       - name: Run
-        uses: appleboy/scp-action@1.0.3
+        uses: appleboy/scp-action@v1.0.3
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
