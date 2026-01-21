@@ -16,7 +16,7 @@ class Loader extends Hls.DefaultConfig.loader {
         // Rewrite segment URLs if needed
         if (context.type === "fragment" || context.type === "segment" || context.type == undefined) {
             const segmentPath = new URL(context.url).pathname.split('/').pop();
-            context.url = `http://0.0.0.0:8081/segment/${url[url.length - 1]}/${segmentPath.split(".")[0]}`;
+            context.url = `${window.APP_CONFIG.apiBase}/segment/${url[url.length - 1]}/${segmentPath.split(".")[0]}`;
             console.log(`Rewritten URL: ${context.url}`);
         }
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loader: Loader
         });
         const url = window.location.href.split("/")
-        hls.loadSource('http://0.0.0.0:8081/video/' + url[url.length - 1]); // HLS playlist that references .ts files
+        hls.loadSource(`${window.APP_CONFIG.apiBase}/video/` + url[url.length - 1]); // HLS playlist that references .ts files
         hls.attachMedia(video);
     }
 })

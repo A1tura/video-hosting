@@ -44,7 +44,7 @@ class VideoFile {
         const headers = new Headers();
         headers.append("Content-type", "application/json")
 
-        fetch("http://0.0.0.0:8081/uploadMetadata", {
+        fetch(`${window.APP_CONFIG.apiBase}/uploadMetadata`, {
             method: "POST",
             body: JSON.stringify(
                 {
@@ -139,7 +139,7 @@ class VideoFile {
 const video = new VideoFile(fileInput, sendStatus, proccesStatus)
 
 async function sendVideoServer(msg, headers) {
-    fetch("http://0.0.0.0:8081/uploadVideoChunk", {
+    fetch(`${window.APP_CONFIG.apiBase}/uploadVideoChunk`, {
         method: "POST",
         body: JSON.stringify(msg),
         headers: headers

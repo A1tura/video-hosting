@@ -1,5 +1,5 @@
-const PLAYLISTS_URL = "http://0.0.0.0:8081/video/";
-const SEGMENT_URL = "http://0.0.0.0:8081/segment/";
+const PLAYLISTS_URL = window.APP_CONFIG.apiBase + "/video/";
+const SEGMENT_URL = window.APP_CONFIG.apiBase + "/segment/";
 
 const videoPlayer = document.getElementById("video");
 const videoIdInput = document.getElementById("videoId");
